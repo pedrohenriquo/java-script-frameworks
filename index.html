@@ -1,11 +1,13 @@
-﻿<!Doctype html>
+<!Doctype html>
 <html>
 <head>
 	<title>Menu CSS jQuery</title>
 	<meta charset="utf-8">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link type="text/css" href="css.css" rel="stylesheet">
 	<script>
 	$(document).ready(function(){
+		$("#menu ul li").css("color","white");
 		$('#menu ul li').prepend('<span></span>');
 			$('#menu ul li').each(function(){
 				var texto= $(this).find('a').text();
@@ -13,38 +15,41 @@
 			});
 			$('#menu ul li').hover(function(){
 				$(this).find('span').stop().animate({
-					marginTop:"-40px"
-				},400);
+					marginLeft:"+30px"
+				},400)
 			},function(){
 				$(this).find('span').stop().animate({
-					marginTop:"0px"
+					marginLeft:"0px"
 				},300);
+			$(document).load(function(){
+});
 			});
 	});
+		
 	</script>
 
 	<style>
-		body{background:black;
+			body
+			{background:black;
 			}
-		#menu{width:700px;
+		#menu{
+			height:100%;
 			margin:auto;
+			position:absolute;
            	}
 		#menu ul{list-style:none;
-			font-size:18px;
+			font-size:1.125em;
 			font-family:"Hobo Std";
 			margin:0px;
 			padding:0px;
-			height:40px;
 			overflow:hidden;
-			}
-		#menu ul li{float:left;
 			}
 		#menu ul li a, #menu ul li span{width:100px;
 			padding:10px 20px;
 			height:18px;
-			color:#FFFFFF;
+			
 			/*background:url("images/Degrade_img.jpg") repeat-x; */
-            background:red;
+            background:gray;
 			text-decoration:none;
 			overflow:hidden;
 			text-align:center;
@@ -54,11 +59,11 @@
 			cursor:pointer;
 			}
 		#menu ul li a{
-			float:left;
 			background:url("images/Degrade_img.jpg") repeat-x left bottom;
-			color:#000000;
+			color:#000;
             height:10px;
-			}
+			display:none;
+		}
 	</style>
 </head>
 <body>
